@@ -51,7 +51,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-18.04
-  #  if: github.event.repository.owner.id == github.event.sender.id
+    if: github.event.repository.owner.id == github.event.sender.id
 
     name: 启动${{matrix.target}}编译
     strategy:
@@ -225,6 +225,7 @@ jobs:
         cat >${GITHUB_WORKSPACE}/Clear <<-EOF
         rm -rf config.buildinfo
         rm -rf feeds.buildinfo
+        rm -rf sha256sums
         rm -rf version.buildinfo
         EOF
         ' >> $GITHUB_WORKSPACE/repo/build/${{matrix.target}}/diy-part.sh
