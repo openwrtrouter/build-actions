@@ -9,7 +9,7 @@ on:
     branches:
       - main
     paths:
-      - 'build/Lede_Private/relevance/start'
+      - 'build/Immortalwrt-Private/relevance/start'
 
 env:
   GIT_REPOSITORY: ${{github.repository}}
@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-       target: [Lede_Private]
+       target: [Immortalwrt-Private]
 
     steps:
     - name: 释放Ubuntu磁盘空间
