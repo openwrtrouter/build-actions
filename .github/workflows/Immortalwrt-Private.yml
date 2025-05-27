@@ -30,6 +30,7 @@ on:
         options:
           - 'x86_64'
           - 'redmi_ax6'
+          - 'p2w_r619ac-128m'
           - 'armsr_rootfs_tar_gz'
       INFORMATION_NOTICE:
         description: 'Telegram或pushplus信息通知'
