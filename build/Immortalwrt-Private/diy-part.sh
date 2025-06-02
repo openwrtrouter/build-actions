@@ -99,6 +99,8 @@ EOF
 # 增加luci-app-easytier
 git clone https://github.com/EasyTier/luci-app-easytier.git ./package/luci-app-easytier
 
+echo "src-git sqm_scripts_nss https://github.com/rickkdotnet/sqm-scripts-nss.git" >> feeds.conf
+
 #升级脚本创建模板
 ./scripts/feeds update -a
 make defconfig
