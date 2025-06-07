@@ -101,7 +101,7 @@ EOF
 echo "src-git easytier_packages https://github.com/EasyTier/luci-app-easytier.git" >> feeds.conf
 
 # 增加 nss
-echo "src-git nss_packages https://github.com/rickkdotnet/sqm-scripts-nss.git" >> feeds.conf
+echo "src-git nss_packages https://github.com/qosmio/nss-packages.git" >> feeds.conf
 
 echo "src-git sqm_scripts_nss https://github.com/rickkdotnet/sqm-scripts-nss.git" >> feeds.conf
 
