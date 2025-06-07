@@ -94,3 +94,16 @@ EOF
 # 在线更新时，删除不想保留固件的某个文件，在EOF跟EOF之间加入删除代码，记住这里对应的是固件的文件路径，比如： rm -rf /etc/config/luci
 cat >>$DELETE <<-EOF
 EOF
+
+# 增加luci-app-easytier
+
+echo "src-git easytier_packages https://github.com/EasyTier/luci-app-easytier.git" >> feeds.conf
+
+# 增加 nss
+echo "src-git nss_packages https://github.com/qosmio/nss-packages.git" >> feeds.conf
+
+echo "src-git sqm_scripts_nss https://github.com/rickkdotnet/sqm-scripts-nss.git" >> feeds.conf
+
+#升级脚本创建模板
+./scripts/feeds update -a
+make defconfig
