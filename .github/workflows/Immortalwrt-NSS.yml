@@ -136,16 +136,16 @@ jobs:
     
     - name: 公告
       continue-on-error: true
-      uses: openwrtrouter/common@message
+      uses: 281677160/common@message
  
     - name: 运行其他和SSH远程(make menuconfig)
       id: info
-      uses: openwrtrouter/common@need
+      uses: 281677160/common@need
         
     - name: 编译信息
       continue-on-error: true
       if: env.COMPILATION_INFORMATION == 'true'
-      uses: openwrtrouter/common@message
+      uses: 281677160/common@message
     
     - name: 清理releases和workflows
       continue-on-error: true
@@ -165,4 +165,4 @@ jobs:
         
     - name: 触发启动"${{ matrix.target }}"开始编译
       if: steps.info.outcome == 'success'
-      uses: openwrtrouter/common@trigger
+      uses: 281677160/common@trigger
