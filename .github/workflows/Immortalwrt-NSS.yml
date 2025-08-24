@@ -135,7 +135,7 @@ jobs:
  
     - name: 运行其他和SSH远程(make menuconfig)
       id: info
-      uses: 281677160/common@need
+      uses: openwrtrouter/common@need
         
     - name: 编译信息
       continue-on-error: true
