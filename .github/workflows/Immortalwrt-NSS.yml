@@ -116,8 +116,8 @@ jobs:
     - name: 部署编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
-        REPO_URL : 'https://github.com/VIKINGYFY/immortalwrt.git'
       run: |
+        sudo variable REPO_URL="https://github.com/VIKINGYFY/immortalwrt.git"
         sudo -E apt-get -qq update -y
         sudo -E apt-get -qq install -y gawk git gettext libssl-dev xsltproc zip git-core wget curl grep python2.7 python3 python3-pip libpython3-dev snapd
         sudo snap install jq
