@@ -108,11 +108,6 @@ jobs:
       env:
         SOURCE_CODE: 'IMMORTALWRT'
       uses: openwrtrouter/common@mishi
-      
-    - name: 修改仓库
-      run: |
-        echo "REPO_URL=https://github.com/VIKINGYFY/immortalwrt.git" >> "${COMPILE_PATH}/relevance/settings.ini"
-        echo "REPO_URL=https://github.com/VIKINGYFY/immortalwrt.git" >> $GITHUB_ENV
 
       
     - name: 部署编译环境
