@@ -113,11 +113,15 @@ jobs:
         SOURCE_CODE: 'IMMORTALWRT'
       uses: 281677160/common@mishi
       
+    - name: 修改仓库
+      run: |
+        echo "REPO_URL=https://github.com/VIKINGYFY/immortalwrt.git" >> "${COMPILE_PATH}/relevance/settings.ini"
+
+      
     - name: 部署编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        echo "REPO_URL=https://github.com/VIKINGYFY/immortalwrt.git" >> $GITHUB_ENV
         sudo -E apt-get -qq update -y
         sudo -E apt-get -qq install -y gawk git gettext libssl-dev xsltproc zip git-core wget curl grep python2.7 python3 python3-pip libpython3-dev snapd
         sudo snap install jq
