@@ -19,9 +19,6 @@ on:
         default: 'openwrt-24.10'
         type: choice
         options:
-          - 'openwrt-24.10'
-          - 'openwrt-23.05'
-          - 'master'
           - 'main'
       CONFIG_FILE:
         description: '请选择[seed文件夹内]的配置文件'
@@ -29,7 +26,6 @@ on:
         default: 'x86_64'
         type: choice
         options:
-          - 'x86_64'
           - 'ax6-stock'
           - 'armsr_rootfs_tar_gz'
       INFORMATION_NOTICE:
@@ -116,6 +112,7 @@ jobs:
     - name: 修改仓库
       run: |
         echo "REPO_URL=https://github.com/VIKINGYFY/immortalwrt.git" >> "${COMPILE_PATH}/relevance/settings.ini"
+        echo "REPO_URL=https://github.com/VIKINGYFY/immortalwrt.git" >> $GITHUB_ENV
 
       
     - name: 部署编译环境
