@@ -107,7 +107,7 @@ jobs:
     - name: 检测密匙/文件/版本
       env:
         SOURCE_CODE: 'IMMORTALWRT'
-      uses: 281677160/common@mishi
+      uses: openwrtrouter/common@mishi
       
     - name: 修改仓库
       run: |
@@ -136,16 +136,16 @@ jobs:
     
     - name: 公告
       continue-on-error: true
-      uses: 281677160/common@message
+      uses: openwrtrouter/common@message
  
     - name: 运行其他和SSH远程(make menuconfig)
       id: info
-      uses: 281677160/common@need
+      uses: openwrtrouter/common@need
         
     - name: 编译信息
       continue-on-error: true
       if: env.COMPILATION_INFORMATION == 'true'
-      uses: 281677160/common@message
+      uses: openwrtrouter/common@message
     
     - name: 清理releases和workflows
       continue-on-error: true
@@ -165,4 +165,4 @@ jobs:
         
     - name: 触发启动"${{ matrix.target }}"开始编译
       if: steps.info.outcome == 'success'
-      uses: 281677160/common@trigger
+      uses: openwrtrouter/common@trigger
